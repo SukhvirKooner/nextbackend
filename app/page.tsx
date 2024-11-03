@@ -10,6 +10,7 @@ async function getUserDetails() {
 
 	return response.data;
 }
+// data fetching in nextjs
 // async component only in server component 
 // bcz this is a server component , this component gets server side rendered 
 export default async function Home() {
