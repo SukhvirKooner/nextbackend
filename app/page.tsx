@@ -1,10 +1,7 @@
 
-import axios from "axios";
+import client from '@/db'
 
 
-import { PrismaClient } from "@prisma/client";
-
-const client = new PrismaClient();
 async function getUserDetails() {
   // await new Promise((r)=>{setTimeout(r,5000)})
 
