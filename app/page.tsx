@@ -1,11 +1,17 @@
 
 import axios from "axios";
 
+
+import { PrismaClient } from "@prisma/client";
+
+const client = new PrismaClient();
 async function getUserDetails() {
   // await new Promise((r)=>{setTimeout(r,5000)})
-  const response = await axios.get("http://localhost:3000/api/user")
 
-	return response.data;
+  const response:any = await client.user.findFirst({});
+
+
+	return response;
 }
 // data fetching in nextjs
 // async component only in server component 
@@ -19,10 +25,10 @@ export default async function Home() {
         <div className="flex justify-center">
             <div className="border p-8 rounded">
                 <div>
-                    Name: {userData?.name}
+                    Username: {userData?.username}
                 </div>
                 
-                {userData?.email}
+                password:{userData?.password}
             </div>
         </div>
     </div>
