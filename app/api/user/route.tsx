@@ -8,6 +8,7 @@ export async function GET() {
     const user = await client.user.findFirst({});
     return Response.json({ name: user?.username, email: user?.username })
 }
+
 export async function POST(req:NextRequest){
     const body = await req.json();
     console.log(body);
