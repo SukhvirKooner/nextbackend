@@ -12,14 +12,23 @@ export async function POST(req:NextRequest){
     console.log(body);
     
     // should add zod validation here
-    const user = await client.user.create({
+    try{const user = await client.user.create({
         data: {
             username: body.username,
             password: body.password
         }
     });
+    return NextResponse.json({
+        body
+    })}catch(e){
+        return NextResponse.json({
+            error:'Erro while signing up'
+        },{
+            status:411
+        })
+    }
 
-    console.log(user.id);
+
 
     return NextResponse.json({ message: "Signed up" });
 }
