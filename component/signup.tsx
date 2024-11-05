@@ -24,6 +24,12 @@ export function Signup() {
                         <LabelledInput onChange={(e) => {
                             setPassword(e.target.value)
                         }} label="Password" type={"password"} placeholder="123456" />
+                        <LabelledInput onChange={(e) => {
+                            setPassword(e.target.value)
+                        }} label="Password" type={"password"} placeholder="123456" />
+                        <LabelledInput onChange={(e) => {
+                            setPassword(e.target.value)
+                        }} label="Password" type={"password"} placeholder="123456" />
                         <button onClick={async()=>{
                             await axios.post('http://localhost:3000/api/user',{
                                 username,
